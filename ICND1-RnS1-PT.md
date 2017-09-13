@@ -1,4 +1,4 @@
-# CCNA R&S 1 Notes
+# ICND1 R&S 1 - IOS Configurations
 
 --------------------------------------------------------------------------
 
@@ -23,21 +23,21 @@
 ### Disable DNS lookup
 	S1(config-if)# no ip domain-lookup
 
-### Console line password (Secure access to the console line)
+### Console line password (Secure access to the console line `>`)
 	Switch# config t
 	Switch(config)# line console 0
 	Switch(config-line)# password cisco
 	Switch(config-line)# login
 	Switch(config-line)# exit
  
-### VTY password (Secure access to the virtual terminal)
+### VTY password (Secure access to the virtual terminal `ssh/telnet`)
 	S1(config)# line vty 0
 	S1(config)# line vty 0 4
 	S1(config)# line vty 0 15    // For lines 0 to 15
 	S1(config-vty)# password cisco
 	S1(config-vty)# login
  
-### Privileged mode password or encrypted password/secret (Secure privileged mode access)
+### Privileged mode password or encrypted password/secret (Secure privileged mode access `#`)
 	S1# config t
 	S1(config)# enable password cisco
 	S1(config)# enable secret itsasecret
@@ -192,12 +192,6 @@
 	ping 2001:DB8:1:4::1
 	tracert 2001:DB8:1:4::A
 	ipv6config /all
-
----
-## Misc
-### Check time. Set time
-    Switch# show clock
-	Switch# clock set 15:00:00 30 Apr 2035
 
 ---
 ## Cabling
